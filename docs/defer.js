@@ -4,6 +4,7 @@
 
   console.log( str + ' : inline', color );
 
+  console.log( '%c$(window).trigger(\'complete\');', color );
   $(window).trigger('complete');
 
   window.addEventListener('DOMContentLoaded', function(){

@@ -13,7 +13,7 @@
   });
 
   $(window).on('complete', function () {
-    console.log('onComplete', document.querySelectorAll('p'));
+    console.log('%conComplete', color, document.querySelectorAll('p'));
   });
 
 })();
