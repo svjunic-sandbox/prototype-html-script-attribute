@@ -4,6 +4,8 @@
 
   console.log( str + ' : inline', color );
 
+  $(window).trigger('complete');
+
   window.addEventListener('DOMContentLoaded', function(){
     console.log( str + ' : DOMContentLoaded', color );
   });

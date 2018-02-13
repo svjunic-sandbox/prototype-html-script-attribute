@@ -11,4 +11,9 @@
   $(function () {
     console.log( str + ' : $.ready', color );
   });
+
+  $(window).on('complete', function () {
+    console.log('onComplete');
+  });
+
 })();
