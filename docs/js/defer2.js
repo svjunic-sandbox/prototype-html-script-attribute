@@ -1,10 +1,10 @@
 (function() {
-  var str = '%cdefer2';
-  var color = 'color: red';
+  let str = '%cdefer2';
+  let color = 'color: red';
 
   console.log(str + ' : inline', color);
 
-  console.log('%c$(window).trigger(\'complete\');', color);
+  console.log("%c$(window).trigger('complete');", color);
   $(window).trigger('complete');
 
   window.addEventListener('DOMContentLoaded', function() {
