@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+var logs = [];
+
+logs.push( { 
+  '_event' :'即時',
+  'document.body' :document.body,
+  'document.scrollingElement' :document.scrollingElement,
+  'document.documentElement' :document.documentElement,
+});
+console.log( { 
+  '_event' :'即時',
+  'document.body' :document.body,
+  'document.scrollingElement' :document.scrollingElement,
+  'document.documentElement' :document.documentElement,
+});
+
+window.addEventListener('DOMContentLoaded', function(){
+    logs.push( { 
+      '_event' :'DOMContentLoaded',
+      'document.body' :document.body,
+      'document.scrollingElement' :document.scrollingElement,
+      'document.documentElement' :document.documentElement,
+    });
+  console.log( { 
+      '_event' :'DOMContentLoaded',
+      'document.body' :document.body,
+      'document.scrollingElement' :document.scrollingElement,
+      'document.documentElement' :document.documentElement,
+    });
+});
+
+window.addEventListener('load', function(){
+    logs.push( { 
+      '_event' :'load',
+      'document.body' :document.body,
+      'document.scrollingElement' :document.scrollingElement,
+      'document.documentElement' :document.documentElement,
+    });
+  console.log( { 
+      '_event' :'load',
+      'document.body' :document.body,
+      'document.scrollingElement' :document.scrollingElement,
+      'document.documentElement' :document.documentElement,
+    });
+});
+
+window.addEventListener('load', function(){
+  if( console.table ) console.table( logs );
+});
+  </script>
+</head>
+<style>
+dd+dt {
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top: 1px solid #ccc;
+}
+img {
+  outline: 3px solid #ccc;
+}
+</style>
+<body>
+  <dl>
+    <dt>chrome70</dt>
+    <dd><img src="./img/chrome70.png"></dd>
+    <dt>safari12</dt>
+    <dd><img src="./img/safari12.png"></dd>
+    <dt>firefox63</dt>
+    <dd><img src="./img/fx63.png"></dd>
+    <dt>ie11</dt>
+    <dd><img src="./img/ie11.png"></dd>
+  </dl>
+</body>
+</html>
