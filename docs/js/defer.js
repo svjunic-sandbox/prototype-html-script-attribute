@@ -1,17 +1,17 @@
-(function(){
-  var str = '%cdefer';
-  var color = 'color: red';
+(function() {
+  let str = '%cdefer';
+  let color = 'color: red';
 
-  console.log( str + ' : inline', color );
+  console.log(str + ' : inline', color);
 
-  console.log( '%c$(window).trigger(\'complete\');', color );
+  console.log('%c$(window).trigger(\'complete\');', color);
   $(window).trigger('complete');
 
-  window.addEventListener('DOMContentLoaded', function(){
-    console.log( str + ' : DOMContentLoaded', color );
+  window.addEventListener('DOMContentLoaded', function() {
+    console.log(str + ' : DOMContentLoaded', color);
   });
 
-  $(function () {
-    console.log( str + ' : $.ready', color );
+  $(function() {
+    console.log(str + ' : $.ready', color);
   });
 })();
