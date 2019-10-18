@@ -36,8 +36,8 @@
       tagjs.async = false;
     }
 
-    //tagjs.onload = tagjs.onreadystatechange = function(e) {
-    tagjs.onload = function(e) {
+    tagjs.onload = tagjs.onreadystatechange = function(e) {
+      //tagjs.onload = function(e) {
       console.log(e);
       num++;
       nextScript();
