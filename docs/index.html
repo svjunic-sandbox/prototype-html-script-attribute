@@ -3,29 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>script</title>
-    <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
-    <script src="./js/defer.js" defer></script>
-    <script src="./js/inline.js"></script>
-    <script src="./js/async.js" async></script>
-    <script src="./js/defer2.js" defer></script>
-    <script src="./js/inline2.js"></script>
-    <script src="./js/async2.js" async></script>
   </head>
   <body>
-    <p>test</p>
-    <hr>
-    <p>test</p>
-    <hr>
-    <p>test</p>
-    <hr>
-    <p>script deferなし</p>
-    <script src="./js/defer-document-write.js"></script>
-    <hr>
-    <p>script deferあり</p>
-    <script src="./js/defer-document-write.js" defer></script>
-    <p>document.write系のscriptにdeferを追加すると、その時点では、というかうごかない</p>
-    <p>そもそも設計の問題もあるが、何でもかんでもdeferというのも間違い</p>
-    <hr>
-    <p>test</p>
+    <ul>
+      <li><a href="heavy-async.html#inline,domcontentloaded,ready,load">heavy-async.html</a></li>
+      <li><a      href="multi1.html#inline,domcontentloaded,ready,load">multi1.html</a></li>
+      <li><a      href="multi2.html#inline,domcontentloaded,ready,load">multi2.html</a></li>
+      <li><a        href="test.html#inline,domcontentloaded,ready,load">test.html</a></li>
+    </ul>
   </body>
 </html>

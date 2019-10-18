@@ -2,16 +2,23 @@
   let str = '%cdefer2';
   let color = 'color: red';
 
-  console.log(str + ' : inline', color);
-
-  console.log("%c$(window).trigger('complete');", color);
-  $(window).trigger('complete');
+  if(/inline/.test(location.hash)){
+    console.log(str + ' : inline', color);
+  }
 
   window.addEventListener('DOMContentLoaded', function() {
-    console.log(str + ' : DOMContentLoaded', color);
+    if (/domcontentloaded/.test(location.hash)) {
+      console.log(str + ' : DOMContentLoaded', color);
+    }
   });
 
   $(function() {
-    console.log(str + ' : $.ready', color);
+    if (/ready/.test(location.hash)) {
+      console.log(str + ' : $.ready', color);
+    }
+  });
+
+  window.addEventListener('load', function() {
+    console.log(str + ' : load', color);
   });
 })();

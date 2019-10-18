@@ -2,13 +2,23 @@
   var str = '%casync';
   var color = 'color: #ffaa00';
 
-  console.log( str + ' : inline', color );
+  if(/inline/.test(location.hash)){
+    console.log(str + ' : inline', color);
+  }
 
-  window.addEventListener('DOMContentLoaded', function(){
-    console.log( str + ' : DOMContentLoaded', color );
+  window.addEventListener('DOMContentLoaded', function() {
+    if (/domcontentloaded/.test(location.hash)) {
+      console.log(str + ' : DOMContentLoaded', color);
+    }
   });
 
-  $(function () {
-    console.log( str + ' : $.ready', color );
+  $(function() {
+    if (/ready/.test(location.hash)) {
+      console.log(str + ' : $.ready', color);
+    }
+  });
+
+  window.addEventListener('load', function() {
+    console.log(str + ' : load', color);
   });
 })();
