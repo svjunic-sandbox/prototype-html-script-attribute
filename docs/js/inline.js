@@ -19,6 +19,8 @@
   });
 
   window.addEventListener('load', function() {
-    console.log(str + ' : load', color);
+    if (/load/.test(location.hash)) {
+      console.log(str + ' : load', color);
+    }
   });
 })();
