@@ -12,5 +12,35 @@
   </head>
   <body>
     <p>めちゃくちゃ重いasyncがあり、かつdomの解析までにダウンロードが終わらなかった場合の実行順序が担保されるかどうか</p>
+
+    <blockquote>
+      <pre>
+head内
+&lt;script src="./js/defer.js" defer&gt;&lt;/script&gt;
+&lt;script src="./js/async.js" async&gt;&lt;/script&gt;
+&lt;script src="./js/defer2.js" defer&gt;&lt;/script&gt;
+&lt;script src="./js/defer-heavy.js" defer&gt;&lt;/script&gt;
+&lt;script src="./js/async-heavy.js" async&gt;&lt;/script&gt;
+
+body内
+&lt;script src="./js/defer-document-write.js"&gt;&lt;/script&gt;
+&lt;script src="./js/defer-document-write.js" defer&gt;&lt;/script&gt;
+      </pre>
+    </blockquote>
+
+    <p>test</p>
+    <hr>
+    <p>test</p>
+    <hr>
+    <p>test</p>
+    <hr>
+    <img src="./img/chrome70.png" onload="console.log('loaded chrome70.png');">
+    <hr>
+    <p>script deferなし</p>
+    <script src="./js/defer-document-write.js"></script>
+    <hr>
+    <img src="./img/ie11.png" onload="console.log('loaded ie11.png');">
+    <hr>
+    <p>test</p>
   </body>
 </html>

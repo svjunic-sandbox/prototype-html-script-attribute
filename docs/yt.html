@@ -5,11 +5,7 @@
     <title>script</title>
     <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
     <script src="./js/defer.js" defer></script>
-    <script src="./js/inline.js"></script>
     <script src="./js/async.js" async></script>
-    <script src="./js/defer2.js" defer></script>
-    <script src="./js/inline2.js"></script>
-    <script src="./js/async2.js" async></script>
   </head>
   <body>
 
@@ -17,11 +13,7 @@
       <pre>
 head内
 &lt;script src="./js/defer.js" defer&gt;&lt;/script&gt;
-&lt;script src="./js/inline.js"&gt;&lt;/script&gt;
 &lt;script src="./js/async.js" async&gt;&lt;/script&gt;
-&lt;script src="./js/defer2.js" defer&gt;&lt;/script&gt;
-&lt;script src="./js/inline2.js"&gt;&lt;/script&gt;
-&lt;script src="./js/async2.js" async&gt;&lt;/script&gt;
 
 body内
 &lt;script src="./js/defer-document-write.js"&gt;&lt;/script&gt;
@@ -40,13 +32,26 @@ body内
     <p>script deferなし</p>
     <script src="./js/defer-document-write.js"></script>
     <hr>
-    <p>script deferあり</p>
-    <script src="./js/defer-document-write.js" defer></script>
-    <p>document.write系のscriptにdeferを追加すると、その時点では、というかうごかない</p>
-    <p>そもそも設計の問題もあるが、何でもかんでもdeferというのも間違い</p>
-    <hr>
     <img src="./img/ie11.png" onload="console.log('loaded ie11.png');">
     <hr>
     <p>test</p>
+
+
+<!-- Y! Tag 2019/09/04 -->
+<script type="text/javascript">
+  (function () {
+    var tagjs = document.createElement("script");
+    var s = document.getElementsByTagName("script")[0];
+    tagjs.async = true;
+    //    tagjs.src = "//s.yjtag.jp/tag.js#site=pqAkEhi&referrer=" + encodeURIComponent(document.location.href) + "";
+    tagjs.src = "/js/include-script.js";
+    s.parentNode.insertBefore(tagjs, s);
+  }());
+</script>
+<noscript>
+  <iframe src="iframe.html" width="1" height="1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+</noscript>
+<!-- End Y! Tag -->
+
   </body>
 </html>

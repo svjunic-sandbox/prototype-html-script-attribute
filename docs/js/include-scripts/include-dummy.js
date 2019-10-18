@@ -1,6 +1,6 @@
 (function() {
-  let str = '%cinline';
-  let color = 'color: blue';
+  let str = '%cinclude-dummy';
+  let color = 'color: red';
 
   if (/inline/.test(location.hash)) {
     console.log(str + ' : inline', color);
